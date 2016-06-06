@@ -9,7 +9,7 @@
 
 \title{Moments for the Asymmetric Laplace Distribution
 }
-\description{Mean, variance, skewness, kurtosis, raw moments and first absolute central moment for the Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p}.
+\description{Mean, variance, skewness, kurtosis, central moments w.r.t \code{mu} and first absolute central moment for the Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p}.
 }
 \usage{
 meanALD(mu=0,sigma=1,p=0.5)
@@ -48,7 +48,7 @@ where \eqn{\rho_p(.)} is the so called check (or loss) function defined by
 with \eqn{I_{.}} denoting the usual indicator function. This  distribution is denoted by \eqn{ALD(\mu,\sigma,p)} and it's \eqn{p}th quantile is equal to \eqn{\mu}. The scale parameter \code{sigma} must be positive and non zero. The skew parameter \code{p} must be between zero and one (0<\code{p}<1).
 }
 \value{
-\code{meanALD} gives the mean, \code{varALD} gives the variance, \code{skewALD} gives the skewness, \code{kurtALD} gives the kurtosis, \code{momentALD} gives the \eqn{k}th raw moment, i.e., \eqn{E(y-\mu)^k} and \code{absALD} gives the first absolute central moment denoted by \eqn{E|y-\mu|}.
+\code{meanALD} gives the mean, \code{varALD} gives the variance, \code{skewALD} gives the skewness, \code{kurtALD} gives the kurtosis, \code{momentALD} gives the \eqn{k}th central moment, i.e., \eqn{E(y-\mu)^k} and \code{absALD} gives the first absolute central moment denoted by \eqn{E|y-\mu|}.
 }
 
 \references{

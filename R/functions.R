@@ -68,7 +68,7 @@ momentALD = function(k=1,mu=0,sigma=1,p=0.5)
 
 meanALD = function(mu=0,sigma=1,p=0.5)
 {
-  mean = momentALD(k=1,mu=mu,sigma=sigma,p=p)
+  mean = momentALD(k=1,mu=mu,sigma=sigma,p=p) + mu
   return(mean)
 }
 

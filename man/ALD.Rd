@@ -7,7 +7,7 @@
 
 \title{The Asymmetric Laplace Distribution
 }
-\description{Density, distribution function, quantile function and random generation for a Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p}.
+\description{Density, distribution function, quantile function and random generation for a Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p} This is a special case of the skewed family of distributions in Galarza (2016) available in \code{\link[lqr]{SKD}}.
 }
 \usage{
 dALD(y, mu = 0, sigma = 1, p = 0.5)
@@ -61,10 +61,7 @@ The length of the result is determined by n for \code{rALD}, and is the maximum 
 }
 
 \references{
-Koenker, R., Machado, J. (1999). Goodness of fit and related inference processes for quantile
-regression. J. Amer. Statist. Assoc. 94(3):1296-1309.
-
-Yu, K. & Moyeed, R. (2001). Bayesian quantile regression. Statistics & Probability Letters, 54(4), 437-447.
+Galarza, C.M., Lachos, V.H., Cabral, C.R.B. and Castro, L.M. (2016). Robust Quantile Regression using a Generalized Class of Skewed Distributions. Technical Report 7, Universidade Estadual de Campinas. \url{http://www.ime.unicamp.br/sites/default/files/rp07-16.pdf}
 
 Yu, K., & Zhang, J. (2005). A three-parameter asymmetric Laplace distribution and its extension. Communications in Statistics-Theory and Methods, 34(9-10), 1867-1879.
 }
@@ -80,16 +77,23 @@ The numerical arguments other than \code{n} are recycled to the length of the re
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link{momentsALD}},\code{\link{likALD}},\code{\link{mleALD}}
+\code{\link[lqr]{SKD}}, \code{\link{momentsALD}},\code{\link{likALD}},\code{\link{mleALD}}
 }
 
 \examples{
 ## Let's plot an Asymmetric Laplace Distribution!
 
 ##Density
+library(ald)
 sseq = seq(-40,80,0.5)
 dens = dALD(y=sseq,mu=50,sigma=3,p=0.75)
-plot(sseq,dens,type="l",lwd=2,col="red",xlab="x",ylab="f(x)", main="ALD Density function")
+plot(sseq,dens,type = "l",lwd=2,col="red",xlab="x",ylab="f(x)", main="ALD Density function")
+
+#Look that is an special case of the skewed family in Galarza (2016)
+#with sigma_new = 2*sigma
+require(lqr)
+dens2 = dSKD(y = sseq,mu = 50,sigma = 3*2,p = 0.75,dist = "laplace")
+points(sseq,dens2,pch="+",cex=0.75)
 
 ## Distribution Function
 df = pALD(q=sseq,mu=50,sigma=3,p=0.75)
