@@ -61,7 +61,7 @@ The length of the result is determined by n for \code{rALD}, and is the maximum 
 }
 
 \references{
-Galarza, C.M., Lachos, V.H., Cabral, C.R.B. and Castro, L.M. (2016). Robust Quantile Regression using a Generalized Class of Skewed Distributions. Technical Report 7, Universidade Estadual de Campinas. \url{http://www.ime.unicamp.br/sites/default/files/rp07-16.pdf}
+Galarza Morales, C., Lachos Davila, V., Barbosa Cabral, C., and Castro Cepero, L. (2017) Robust quantile regression using a generalized class of skewed distributions. Stat,6: 113-130 doi: 10.1002/sta4.140.
 
 Yu, K., & Zhang, J. (2005). A three-parameter asymmetric Laplace distribution and its extension. Communications in Statistics-Theory and Methods, 34(9-10), 1867-1879.
 }
