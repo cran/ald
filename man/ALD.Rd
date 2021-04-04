@@ -7,7 +7,7 @@
 
 \title{The Asymmetric Laplace Distribution
 }
-\description{Density, distribution function, quantile function and random generation for a Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p} This is a special case of the skewed family of distributions in Galarza (2016) available in \code{\link[lqr]{SKD}}.
+\description{Density, distribution function, quantile function and random generation for a Three-Parameter Asymmetric Laplace Distribution defined in Koenker and Machado (1999) useful for quantile regression with location parameter equal to \code{mu}, scale parameter \code{sigma} and skewness parameter \code{p} This is a special case of the skewed family of distributions in Galarza (2016) available in \code{lqr::SKD}.
 }
 \usage{
 dALD(y, mu = 0, sigma = 1, p = 0.5)
@@ -77,7 +77,7 @@ The numerical arguments other than \code{n} are recycled to the length of the re
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link[lqr]{SKD}}, \code{\link{momentsALD}},\code{\link{likALD}},\code{\link{mleALD}}
+\code{\link{momentsALD}},\code{\link{likALD}},\code{\link{mleALD}}
 }
 
 \examples{
@@ -89,11 +89,8 @@ sseq = seq(-40,80,0.5)
 dens = dALD(y=sseq,mu=50,sigma=3,p=0.75)
 plot(sseq,dens,type = "l",lwd=2,col="red",xlab="x",ylab="f(x)", main="ALD Density function")
 
-#Look that is an special case of the skewed family in Galarza (2016)
-#with sigma_new = 2*sigma
-require(lqr)
-dens2 = dSKD(y = sseq,mu = 50,sigma = 3*2,p = 0.75,dist = "laplace")
-points(sseq,dens2,pch="+",cex=0.75)
+#Look that is a special case of the skewed family in Galarza (2017)
+# available in lqr package, dSKD(...,sigma = 2*3,dist = "laplace")
 
 ## Distribution Function
 df = pALD(q=sseq,mu=50,sigma=3,p=0.75)
